@@ -1,0 +1,27 @@
+{
+  "name": "my-food-app",
+  "version": "1.0.0",
+
+  "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vipin88149/my-food-app.git"
+  },
+  "author": "vipin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vipin88149/my-food-app/issues"
+  },
+  "homepage": "https://github.com/vipin88149/my-food-app#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
