@@ -1,7 +1,6 @@
 {
   "name": "my-food-app",
   "version": "1.0.0",
-
   "scripts": {
     "start": "npx parcel index.html",
     "build": "npx parcel build index.html"
@@ -18,10 +17,15 @@
   "homepage": "https://github.com/vipin88149/my-food-app#readme",
   "description": "",
   "devDependencies": {
-    "parcel": "^2.15.2"
+    "parcel": "^2.15.2",
+    "prettier": "3.6.2"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router": "^6.22.3",
+    "react-router-dom": "^6.22.3",
+    "tailwindcss": "^4.1.11"
   }
 }
