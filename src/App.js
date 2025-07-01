@@ -7,6 +7,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 // import Grocery from "./components/Grocery";
 // chunking
@@ -20,10 +23,12 @@ const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
     return (
+      <Provider store={appStore} >
         <div className="app">
             <Header />
             <Outlet />
         </div>
+      </Provider>
     )
 };
 
@@ -55,7 +60,10 @@ const appRouter = createBrowserRouter([
        {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />
-       }
+       },
+      { path: "/cart",
+        element: <Cart />
+      }
       ],
       errorElement: <h1>something went wrong</h1>
 
