@@ -2,6 +2,8 @@ import Shimmer from "./Shimmer";
 import RestaurantCard, {withHighRatedLabel} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { UPDATE_MENU_API } from "../utils/constants";
+
 
 
 const Body = () => {
@@ -19,13 +21,15 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.0688&lng=76.1068&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7018956&lng=77.20674269999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json(); 
         console.log(json); 
         setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setTitle(json?.data?.cards[2]?.card?.card?.title);
         setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+       
     }   
+   
     
     if(restaurants.length === 0) {
         return <Shimmer />
@@ -36,7 +40,8 @@ const Body = () => {
             <div className="flex">
                 <div className="m-4 p-4" >
                     <input 
-                    type="text" 
+                    type="text"
+                    data-testid="search-input" 
                     className="border border-solid border-black" 
                     value={searchtext} 
                     onChange={(e)=> setSearchtext(e.target.value) }
